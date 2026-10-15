@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#120726">
+  <title>For Anshi ❤️ | Will You Be My Garba Partner?</title>
+
+  <!-- Google Fonts: Elegant Serifs & Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BLURRED FESTIVE BACKGROUND LAYERS -->
+  <div class="festive-bg-backdrop" aria-hidden="true">
+    <div class="festive-bg-layer layer-mandli"></div>
+    <div class="festive-bg-layer layer-arch"></div>
+    <div class="festive-bg-overlay"></div>
+  </div>
+
+  <!-- FESTIVE AMBIENT CANVAS (Golden Embers, Bokeh, Starlight) -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- FLOATING PARTICLES CONTAINER -->
+  <div id="hearts-container" aria-hidden="true"></div>
+
+  <!-- STEP 1: OPENING GARBA LOADER -->
+  <aside id="romantic-loader" class="loader-overlay" aria-label="Loading special experience">
+    <div class="loader-content">
+      <div class="heart-pulse-wrapper">
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="pulse-glow"></div>
+        <div class="loader-heart">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 28.5C16 28.5 3 20.5 3 11.5C3 7.35786 6.35786 4 10.5 4C13.0673 4 15.3402 5.28912 16 7.25C16.6598 5.28912 18.9327 4 21.5 4C25.6421 4 29 7.35786 29 11.5C29 20.5 16 28.5 16 28.5Z" fill="url(#festive-gradient)"/>
+            <defs>
+              <linearGradient id="festive-gradient" x1="3" y1="4" x2="29" y2="28.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#ff2a7a"/>
+                <stop offset="0.5" stop-color="#ff7a00"/>
+                <stop offset="1" stop-color="#ffd24d"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="sparkle-particle sp-1">🪔</div>
+        <div class="sparkle-particle sp-2">✨</div>
+        <div class="sparkle-particle sp-3">💃</div>
+      </div>
+
+      <div class="loader-text-box">
+        <h2 id="loader-quote" class="loader-title">Tuning the dhol beats...</h2>
+        <p class="loader-sub">Preparing something straight from the heart</p>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="loader-progress"></div>
+      </div>
+      <div class="progress-label" id="loader-percentage">0%</div>
+
+      <button id="skip-loader-btn" class="skip-btn" type="button">Enter directly &rarr;</button>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-icon">🪔</span>
+        <span class="brand-text">Garba Nights with You</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#memories" class="nav-link">Memories</a>
+        <a href="#moments" class="nav-link">Moments Together</a>
+        <a href="#letter" class="nav-link">Little Note</a>
+        <a href="#planner" class="nav-link" id="navPlannerLink">Garba Planner</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Ambient Music Toggle -->
+        <button id="musicToggleBtn" class="audio-btn" type="button" aria-label="Toggle festive music" title="Toggle festive background music">
+          <span class="audio-icon" id="musicIcon">🎵</span>
+          <span class="audio-label" id="musicLabel">Play Music</span>
+          <div class="equalizer-bars" id="eqBars">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN HOMEPAGE CONTAINER -->
+  <main class="page-content">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <!-- Left Hero Content -->
+        <div class="hero-left">
+          <div class="romantic-tag">
+            <span class="sparkle">✦</span>
+            <span>NAVRATRI NIGHT SPECIAL INVITATION</span>
+            <span class="sparkle">✦</span>
+          </div>
+
+          <h1 class="hero-title">
+            Garba Under<br>
+            <span class="gold-gradient">The Starlit Sky</span>
+          </h1>
+
+          <p class="hero-description">
+            Under the swirling lights, the rhythmic echo of dhol beats, and the vibrant colors of Navratri, there is only one person I want to twirl with. In a circle of thousands dancing, my eyes will always search for you...
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#letter" id="heroInvitationBtn" class="btn btn-gold glow-effect">
+              <span>A Special Invitation 🪔</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#memories" class="btn btn-glass">
+              <span>View Festive Moments 📸</span>
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <span class="h-icon">🥁</span>
+              <div class="h-text">
+                <strong>Rhythmic Dhol Beats</strong>
+                <small>Soulful 3-Taali & Dodhiyu</small>
+              </div>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="h-icon">💃</span>
+              <div class="h-text">
+                <strong>Twirls & Dandiya</strong>
+                <small>In sync with every beat</small>
+              </div>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="h-icon">🥟</span>
+              <div class="h-text">
+                <strong>Midnight Jalebi & Fafda</strong>
+                <small>Sweet cravings after 11 PM</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual -->
+        <div class="hero-right">
+          <div class="hero-art-frame">
+            <div class="art-glow"></div>
+            <div class="art-floating-badge">
+              <span class="pulse-dot"></span>
+              <span>You & Me on the Garba Ground 💃🕺</span>
+            </div>
+
+            <div class="image-wrapper">
+              <img src="assets/images/dn.jpeg" alt="A romantic couple in festive traditional Navratri attire playing Dandiya under fairy lights" class="hero-image" id="heroImageElement">
+              <div class="image-overlay-lighting"></div>
+            </div>
+
+            <div class="art-footer-caption">
+              <p>“In a crowd of thousands dancing, my favorite rhythm is the beat of your heart.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO COLLAGE & MEMORIES SECTION -->
+    <section id="memories" class="memories-section">
+      <div class="section-header">
+        <span class="section-badge">📸 OUR FESTIVE MEMORIES</span>
+        <h2 class="section-title">The Magic We Bring to Every Celebration</h2>
+        <p class="section-subtitle">Every twirl, every laugh, and every strike of our dandiya sticks turns into an unforgettable memory.</p>
+      </div>
+
+      <!-- POLAROID PHOTO COLLAGE GRID -->
+      <div class="collage-grid">
+        <!-- Photo 1 -->
+        <div class="polaroid-card tilt-left" data-index="1">
+          <div class="pin">📌</div>
+          <div class="polaroid-img-box">
+            <img src="assets/images/photo1.jpg" alt="Resting peacefully wrapped in her bandhani dupatta and loving embrace amidst the festival crowd" class="polaroid-img" loading="lazy">
+            <div class="img-hover-overlay">
+              <span>View Moment 🔍</span>
+            </div>
+          </div>
+          <div class="polaroid-caption">
+            <p class="handwriting">When the noise faded, you wrapped me in your dupatta and held me close. In your warmth, I found my safest home. 🌸❤️</p>
+            <span class="caption-date">My Safe Haven & Your Warmth</span>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="polaroid-card tilt-right" data-index="2">
+          <div class="pin">📌</div>
+          <div class="polaroid-img-box">
+            <img src="assets/images/photo2.jpg" alt="Dancing together hand in hand under glowing festival fairy lights" class="polaroid-img" loading="lazy">
+            <div class="img-hover-overlay">
+              <span>View Moment 🔍</span>
+            </div>
+          </div>
+          <div class="polaroid-caption">
+            <p class="handwriting">Lost in the dhol beats, twirling hand in hand under a canopy of starlight. In a ground full of dancers, my eyes never left yours. 💃✨</p>
+            <span class="caption-date">Twirling Under the Starlight</span>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="polaroid-card tilt-left-subtle" data-index="3">
+          <div class="pin">📌</div>
+          <div class="polaroid-img-box">
+            <img src="assets/images/photo3.jpg" alt="Holding her close in a romantic dance embrace during Garba night" class="polaroid-img" loading="lazy">
+            <div class="img-hover-overlay">
+              <span>View Moment 🔍</span>
+            </div>
+          </div>
+          <div class="polaroid-caption">
+            <p class="handwriting">Pulling you close mid-dance, heartbeats racing faster than the music. In that split second, time stopped just for the two of us. 🥁💫</p>
+            <span class="caption-date">A Stolen Beat & Sweet Embrace</span>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="polaroid-card tilt-right-subtle" data-index="4">
+          <div class="pin">📌</div>
+          <div class="polaroid-img-box">
+            <img src="assets/images/photo4.jpg" alt="Carrying her tenderly in my arms across the wet streets after hours of dancing" class="polaroid-img" loading="lazy">
+            <div class="img-hover-overlay">
+              <span>View Moment 🔍</span>
+            </div>
+          </div>
+          <div class="polaroid-caption">
+            <p class="handwriting">When your feet couldn't walk from dancing all night, carrying you in my arms felt like the easiest, sweetest thing in the world. 🌙❤️</p>
+            <span class="caption-date">Carrying My Whole World</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENTS WE CAN CREATE TOGETHER (Diary / Story section) -->
+    <section id="moments" class="diary-section">
+      <div class="section-header">
+        <span class="section-badge">✨ MOMENTS WE CAN CREATE TOGETHER</span>
+        <h2 class="section-title">4 Magical Garba Night Moments Waiting for Us</h2>
+        <p class="section-subtitle">From the first dhol roll to the 11 PM sweet stalls, here is the dream evening I want to share with you.</p>
+      </div>
+
+      <div class="diary-grid" id="diaryGrid">
+        <!-- Moment 1 -->
+        <article class="diary-page tilt-left-subtle">
+          <div class="washi-tape tape-pink"></div>
+          <div class="paper-clip">📎</div>
+          <div class="diary-entry-header">
+            <span class="diary-date">👗 MOMENT #01 &bull; 8:00 PM</span>
+            <span class="diary-weather">✨ The Grand Entry</span>
+          </div>
+          <h3 class="diary-title">The Grand Entry in Matching Attire 👑</h3>
+          <p class="diary-text">
+            “Stepping onto the glowing festival ground together, color-coordinated in royal mirror-work and embroidery. People turning heads, fairy lights sparkling in your eyes, and me feeling like the luckiest person in the world just to be walking beside you.”
+          </p>
+          <div class="diary-ps">
+            <span>~ P.S. Get ready to twirl, because all eyes will be on you!</span>
+          </div>
+          <div class="diary-footer">
+            <span class="diary-stamp">✨ VIBE: ROYAL & MESMERIZING</span>
+          </div>
+        </article>
+
+        <!-- Moment 2 -->
+        <article class="diary-page tilt-right-subtle">
+          <div class="washi-tape tape-gold"></div>
+          <div class="paper-clip">📎</div>
+          <div class="diary-entry-header">
+            <span class="diary-date">🥁 MOMENT #02 &bull; 10:15 PM</span>
+            <span class="diary-weather">💃 The Big Circle</span>
+          </div>
+          <h3 class="diary-title">Twirling in the 3-Taali & Dodhiyu 🌀</h3>
+          <p class="diary-text">
+            “Joining hands as the dhol picks up tempo, matching every clap, turn, and step. Spinning faster and laughing whenever one of us misses a beat, until the entire world around us melts into a vibrant blur of colors, rhythm, and pure joy.”
+          </p>
+          <div class="diary-ps">
+            <span>~ P.S. Even if we step on each other’s toes, we are NOT stopping!</span>
+          </div>
+          <div class="diary-footer">
+            <span class="diary-stamp">🥁 ENERGY: 100% UNSTOPPABLE</span>
+          </div>
+        </article>
+
+        <!-- Moment 3 -->
+        <article class="diary-page tilt-left-subtle">
+          <div class="washi-tape tape-rose"></div>
+          <div class="paper-clip">📎</div>
+          <div class="diary-entry-header">
+            <span class="diary-date">💫 MOMENT #03 &bull; Midnight</span>
+            <span class="diary-weather">🪔 Dandiya Clash</span>
+          </div>
+          <h3 class="diary-title">That Stolen Glance Across the Dandiya Sticks ❤️</h3>
+          <p class="diary-text">
+            “The crisp clatter of our dandiya sticks striking in mid-air. In a massive arena of hundreds of dancers, our eyes suddenly lock for just three seconds—and everything else goes quiet. That unspoken smile that says you're thinking the exact same thing.”
+          </p>
+          <div class="diary-ps">
+            <span>~ P.S. My favorite song of the night is the sound of your laugh.</span>
+          </div>
+          <div class="diary-footer">
+            <span class="diary-stamp">💖 HEARTBEAT: FASTER THAN THE DHOL</span>
+          </div>
+        </article>
+
+        <!-- Moment 4 -->
+        <article class="diary-page tilt-right-subtle">
+          <div class="washi-tape tape-lavender"></div>
+          <div class="paper-clip">📎</div>
+          <div class="diary-entry-header">
+            <span class="diary-date">🥟 MOMENT #04 &bull; 10:45 PM</span>
+            <span class="diary-weather">🌙 Cool Night Breeze</span>
+          </div>
+          <h3 class="diary-title">The 11 PM Post-Garba Fafda & Jalebi Crawl 🍵</h3>
+          <p class="diary-text">
+            “Exhausted, smiling, feet sore, but hearts overflowing. Sneaking away from the loud loudspeakers into the cool breeze to share warm crispy jalebis dripping with syrup, spicy crunchy fafda, and steaming hot kulhad masala chai.”
+          </p>
+          <div class="diary-ps">
+            <span>~ P.S. The sweetest ending to the most magical night of the year.</span>
+          </div>
+          <div class="diary-footer">
+            <span class="diary-stamp">🥟 CRAVING: SATISFIED TOGETHER</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ROMANTIC LOVE LETTER SECTION -->
+    <section id="letter" class="letter-section">
+      <div class="letter-card">
+        <div class="wax-seal">🪔</div>
+        <div class="letter-inner">
+          <span class="letter-date">For <span data-bind="herName">Anshi</span></span>
+          <h2 class="letter-title">A Little Note From My Heart</h2>
+          <p class="letter-text">
+            Navratri comes only once a year, bringing nine magical nights of lights, thunderous dhol, and vibrant colors. But truth be told, in a crowded ground of thousands dancing, I don’t care about the crowd—I only want one hand to hold when the music starts, one person to spin with until my feet give up, and one partner to share midnight jalebis with.
+          </p>
+          <p class="letter-text">
+            So before the first dhol beat rolls out, I have one question that I’ve been waiting to ask you...
+          </p>
+          <div class="signature">
+            <span>With all my heart,</span>
+            <strong data-bind="yourName">Harsh</strong>
+          </div>
+
+          <!-- INVITATION TRIGGER BUTTON -->
+          <div class="invitation-trigger-box" id="invitationTriggerBox">
+            <button id="openInvitationBtn" class="btn btn-gold glow-effect pulse-trigger" type="button">
+              <span>💌 Open Special Invitation For Anshi &rarr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL INVITATION POPUP MODAL -->
+    <div id="invitationModal" class="invitation-modal-overlay hidden" aria-modal="true" role="dialog">
+      <div class="invitation-modal-backdrop" id="invitationModalBackdrop"></div>
+      <div class="invitation-popup-card">
+        <button class="invitation-close-btn" id="closeInvitationModal" type="button" aria-label="Close modal">&times;</button>
+        
+        <div class="popup-wax-seal">🪔</div>
+        <div class="floating-hearts-badge">✨ A Special Navratri Invitation</div>
+
+        <h2 class="ask-title">
+          Dearest <span data-bind="herName">Anshi</span>,<br>
+          <span class="gold-gradient">Will you be my Garba Partner this Navratri?</span> 💃❤️
+        </h2>
+
+        <p class="ask-subtitle">
+          I promise endless twirls, zero awkward steps, unlimited laughter, matching colors, and the best midnight jalebi-fafda in town!
+        </p>
+
+        <div class="ask-actions-wrapper" id="askActionsArea">
+          <button id="yesBtn" class="btn btn-yes glow-effect" type="button">
+            <span class="btn-heart-icon">💃</span>
+            <span>YES, Absolutely! Let's Twirl!</span>
+          </button>
+          
+          <button id="noBtn" class="btn btn-no" type="button">
+            <span>Hmm, let me think... 🤔</span>
+          </button>
+        </div>
+
+        <!-- Cheerful response message when YES is clicked -->
+        <div id="acceptedMessage" class="accepted-box hidden">
+          <div class="celebrate-emoji">🎉🪔🥁💃✨</div>
+          <h3>YAY! Grab your dandiya sticks, Anshi! ❤️</h3>
+          <p>You just made this Navratri unforgettable! Now let's design our dream Garba night below...</p>
+          <button id="goToMenuBtn" class="btn btn-gold" type="button">
+            <span>Open Our Garba Night Planner &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE GARBA NIGHT PLANNER POPUP MODAL -->
+    <div id="plannerModal" class="planner-modal-overlay hidden" aria-modal="true" role="dialog">
+      <div class="planner-modal-backdrop" id="plannerModalBackdrop"></div>
+      <div class="planner-popup-card">
+        <button class="invitation-close-btn" id="closePlannerModal" type="button" aria-label="Close planner modal">&times;</button>
+
+        <div class="popup-wax-seal">🪔</div>
+        <div class="floating-hearts-badge">✨ Design Our Dream Garba Night</div>
+
+        <div class="planner-modal-header">
+          <h2 class="planner-modal-title">Our Navratri Plan À La Carte</h2>
+          <p class="planner-modal-subtitle">A specially curated experience for Anshi & Harsh. Pick your favorite venue, attire, anthem & late night bites!</p>
+          <div class="menu-divider-gold"></div>
+        </div>
+
+        <div class="planner-sections-flow">
+          <!-- 1. Preferred Garba Venue, Location & Timing -->
+          <div class="menu-course-group">
+            <div class="course-header">
+              <span class="course-badge">PART 01</span>
+              <h4 class="course-title">🎪 Garba Venue, Location & Timing</h4>
+              <span class="course-hint">Select the festival venue you fancy most:</span>
+            </div>
+            <div class="menu-grid venue-grid" id="options-restro">
+              <!-- Venue 1 -->
+              <button class="menu-dish-card venue-card active" data-group="restro" data-value="🏛️ Global Garba Festival 2026 (Purana Qila)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🏛️</span>
+                  <span class="dish-name">Global Garba Festival 2026</span>
+                </div>
+                <span class="venue-date-badge">📅 Oct 15 – 19, 2026 • Gates: 5:00 PM (7:00 PM Show)</span>
+                <div class="venue-location-row">
+                  <span class="venue-loc-pin">📍</span>
+                  <a href="https://in.bookmyshow.com/activities/global-garba-festival-2026/ET00514280" target="_blank" rel="noopener noreferrer" class="venue-link" onclick="event.stopPropagation()">Purana Qila, New Delhi &nearr;</a>
+                </div>
+                <p class="dish-desc">A massive 5-night celebration featuring prominent live artists like Salim Sulaiman, Snehdeep Singh Kalsi, Deepali Sathe & traditional raas experiences.</p>
+              </button>
+
+              <!-- Venue 2 -->
+              <button class="menu-dish-card venue-card" data-group="restro" data-value="✨ Shubharambh 2026 - Disco Dandiya (Bharat Mandapam)">
+                <div class="dish-top">
+                  <span class="dish-emoji">✨</span>
+                  <span class="dish-name">Shubharambh 2026 - Disco Dandiya</span>
+                </div>
+                <span class="venue-date-badge">📅 Oct 16 – 18, 2026 • 4:00 PM Onwards</span>
+                <div class="venue-location-row">
+                  <span class="venue-loc-pin">📍</span>
+                  <a href="https://www.district.in/events/shubharambh-delhis-biggest-disco-dandiya-festival-buy-tickets" target="_blank" rel="noopener noreferrer" class="venue-link" onclick="event.stopPropagation()">Bharat Mandapam, New Delhi &nearr;</a>
+                </div>
+                <p class="dish-desc">Delhi’s Biggest Disco Dandiya Festival featuring high-energy live DJs, flea market, immersive photo zones, and celebrity guests.</p>
+              </button>
+
+              <!-- Venue 3 -->
+              <button class="menu-dish-card venue-card" data-group="restro" data-value="🌌 GarbaVerse 1.0 (Dilli Haat, Pitampura)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🌌</span>
+                  <span class="dish-name">GarbaVerse 1.0 by Delta Events</span>
+                </div>
+                <span class="venue-date-badge">📅 Oct 17 – 18, 2026 • Weekend Special</span>
+                <div class="venue-location-row">
+                  <span class="venue-loc-pin">📍</span>
+                  <a href="https://www.district.in/events/dandiya-mahotsav-by-delta-events-oct17-2026-buy-tickets" target="_blank" rel="noopener noreferrer" class="venue-link" onclick="event.stopPropagation()">Dilli Haat, Pitampura, New Delhi &nearr;</a>
+                </div>
+                <p class="dish-desc">A large-scale weekend Garba and Bollywood Dandiya arena with live DJ performances, food stalls, and vibrant festive décor.</p>
+              </button>
+
+              <!-- Venue 4 -->
+              <button class="menu-dish-card venue-card" data-group="restro" data-value="🎶 Raatri Raaga - The Raas Affair (JLN Stadium)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🎶</span>
+                  <span class="dish-name">Raatri Raaga - The Raas Affair</span>
+                </div>
+                <span class="venue-date-badge">📅 Oct 16 – 18, 2026 • 4:00 PM Onwards</span>
+                <div class="venue-location-row">
+                  <span class="venue-loc-pin">📍</span>
+                  <a href="https://www.instagram.com/p/DdTYxR_mzO7/" target="_blank" rel="noopener noreferrer" class="venue-link" onclick="event.stopPropagation()">JLN Stadium, New Delhi &nearr;</a>
+                </div>
+                <p class="dish-desc">Multi-day traditional dance and music affair with massive open-air Garba circles and authentic food stalls.</p>
+              </button>
+
+              <!-- Venue 5 -->
+              <button class="menu-dish-card venue-card" data-group="restro" data-value="🏟️ Meri Dilli Dandiya Utsav (Talkatora Stadium)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🏟️</span>
+                  <span class="dish-name">Meri Dilli Dandiya Utsav</span>
+                </div>
+                <span class="venue-date-badge">📅 Oct 23 – 25, 2026 • Multiple Slots</span>
+                <div class="venue-location-row">
+                  <span class="venue-loc-pin">📍</span>
+                  <span class="venue-location-text">Talkatora Indoor Stadium, New Delhi</span>
+                </div>
+                <p class="dish-desc">Indoor stadium-scale Dandiya celebration suited for families and large groups with festive ambiance.</p>
+              </button>
+
+              <!-- Venue 6 -->
+              <button class="menu-dish-card venue-card" data-group="restro" data-value="🥁 Dandiya Night 3.0 (Dilli Haat, Janakpuri)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🥁</span>
+                  <span class="dish-name">Dandiya Night 3.0</span>
+                </div>
+                <span class="venue-date-badge">📅 Oct 11 – 18, 2026 • 4:00 PM – 10:00 PM Daily</span>
+                <div class="venue-location-row">
+                  <span class="venue-loc-pin">📍</span>
+                  <a href="https://in.bookmyshow.com/activities/dandiya-night/ET00512324" target="_blank" rel="noopener noreferrer" class="venue-link" onclick="event.stopPropagation()">Dilli Haat, Janakpuri, New Delhi &nearr;</a>
+                </div>
+                <p class="dish-desc">Family-friendly, high-energy DJ Dandiya and thunderous dhol beats spanning 8 nights with food stalls.</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-divider-subtle"></div>
+
+          <!-- 2. Coordinated Attire Style -->
+          <div class="menu-course-group">
+            <div class="course-header">
+              <span class="course-badge">PART 02</span>
+              <h4 class="course-title">👗 Coordinated Attire Style</h4>
+              <span class="course-hint">How should we style our matching looks?</span>
+            </div>
+            <div class="menu-grid attire-grid" id="options-timing">
+              <!-- Attire 1 -->
+              <button class="menu-dish-card active" data-group="timing" data-value="👑 Patola Print Fusion Coordinates">
+                <div class="dish-top">
+                  <span class="dish-emoji">👑</span>
+                  <span class="dish-name">Patola Print Fusion Coordinates</span>
+                </div>
+                <div class="attire-looks-box">
+                  <p class="attire-look-item"><strong>• Her Look:</strong> High-waisted Lehenga skirt or dhoti pants with geometric Patola silk print, paired with a solid crop top.</p>
+                  <p class="attire-look-item"><strong>• His Look:</strong> Contemporary short Kurta or asymmetrical vest with matching Patola print weave on yoke/pockets & neutral trousers.</p>
+                </div>
+                <div class="dish-price">Contemporary Royal Fusion ★</div>
+              </button>
+
+              <!-- Attire 2 -->
+              <button class="menu-dish-card" data-group="timing" data-value="✨ Pastel Mirror-Work Lehenga & Nehru Jacket Set">
+                <div class="dish-top">
+                  <span class="dish-emoji">✨</span>
+                  <span class="dish-name">Pastel Mirror-Work & Nehru Jacket</span>
+                </div>
+                <div class="attire-looks-box">
+                  <p class="attire-look-item"><strong>• Her Look:</strong> Pastel-toned (mint green or blush pink) Lehenga with intricate all-over glass mirror work catching night lights.</p>
+                  <p class="attire-look-item"><strong>• His Look:</strong> Subtle cream/pastel Kurta-Pyjama set layered with a heavy mirror-work Nehru Jacket tailored from matching fabric.</p>
+                </div>
+                <div class="dish-price">Gleaming Starlight Elegance ★</div>
+              </button>
+
+              <!-- Attire 3 -->
+              <button class="menu-dish-card" data-group="timing" data-value="🌿 Ajrakh Print Indo-Western Outfit">
+                <div class="dish-top">
+                  <span class="dish-emoji">🌿</span>
+                  <span class="dish-name">Ajrakh Print Indo-Western Outfit</span>
+                </div>
+                <div class="attire-looks-box">
+                  <p class="attire-look-item"><strong>• Her Look:</strong> Indo-western long jacket cape / tiered maxi dress with earthy block-printed Ajrakh patterns & heavy silver statement belt.</p>
+                  <p class="attire-look-item"><strong>• His Look:</strong> Matching block-printed Ajrakh shirt-kurta worn over straight-fit pants, offering high mobility for dancing.</p>
+                </div>
+                <div class="dish-price">High-Mobility Heritage Chic ★</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-divider-subtle"></div>
+
+          <!-- 3. Dance & Musical Anthem -->
+          <div class="menu-course-group">
+            <div class="course-header">
+              <span class="course-badge">PART 03</span>
+              <h4 class="course-title">🥁 Dance & Musical Anthem</h4>
+              <span class="course-hint">Which track is our ultimate dancefloor anthem?</span>
+            </div>
+            <div class="menu-grid songs-grid" id="options-commute">
+              <!-- Song 1 -->
+              <button class="menu-dish-card active" data-group="commute" data-value="🎶 &quot;Chogada&quot; (Loveyatri)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🎶</span>
+                  <span class="dish-name">&ldquo;Chogada&rdquo; (Loveyatri)</span>
+                </div>
+                <p class="dish-desc">A massive festival favorite known for its rapid tempo increase that gets the entire circle moving in sync.</p>
+                <div class="dish-price">Peak Circle Energy ★</div>
+              </button>
+
+              <!-- Song 2 -->
+              <button class="menu-dish-card" data-group="commute" data-value="🥁 &quot;Nagada Sang Dhol&quot; (Ram-Leela)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🥁</span>
+                  <span class="dish-name">&ldquo;Nagada Sang Dhol&rdquo;</span>
+                </div>
+                <p class="dish-desc">Heavily dhol-driven track from Ram-Leela offering intense thunderous beats perfect for fast-paced coordination.</p>
+                <div class="dish-price">Thunderous Dholak ★</div>
+              </button>
+
+              <!-- Song 3 -->
+              <button class="menu-dish-card" data-group="commute" data-value="✨ &quot;Dholi Taro Dhol Baaje&quot; (Classic)">
+                <div class="dish-top">
+                  <span class="dish-emoji">✨</span>
+                  <span class="dish-name">&ldquo;Dholi Taro Dhol Baaje&rdquo;</span>
+                </div>
+                <p class="dish-desc">A nostalgic 1999 classic that acts as the timeless midnight anthem across every Garba arena.</p>
+                <div class="dish-price">Nostalgic Midnight Anthem ★</div>
+              </button>
+
+              <!-- Song 4 -->
+              <button class="menu-dish-card" data-group="commute" data-value="⚡ &quot;Kamariya&quot; (Mitron)">
+                <div class="dish-top">
+                  <span class="dish-emoji">⚡</span>
+                  <span class="dish-name">&ldquo;Kamariya&rdquo; (Mitron)</span>
+                </div>
+                <p class="dish-desc">Blends pop beats with traditional Gujarati phrasing, making it wildly popular for freestyle twirls and steps.</p>
+                <div class="dish-price">Freestyle Pop Raas ★</div>
+              </button>
+
+              <!-- Song 5 -->
+              <button class="menu-dish-card" data-group="commute" data-value="🪔 &quot;Shubhaarambh&quot; (Kai Po Che!)">
+                <div class="dish-top">
+                  <span class="dish-emoji">🪔</span>
+                  <span class="dish-name">&ldquo;Shubhaarambh&rdquo;</span>
+                </div>
+                <p class="dish-desc">An auspicious, uplifting track featuring authentic shehnai and dhol layers ideal for opening the dance floor.</p>
+                <div class="dish-price">Auspicious Opening ★</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-divider-subtle"></div>
+
+          <!-- 4. Midnight Cravings -->
+          <div class="menu-course-group">
+            <div class="course-header">
+              <span class="course-badge">PART 04</span>
+              <h4 class="course-title">🥟 Post-Garba Midnight Cravings</h4>
+              <span class="course-hint">The sweetest fuel after hours of dancing!</span>
+            </div>
+            <div class="menu-grid" id="options-duration">
+              <button class="menu-dish-card active" data-group="duration" data-value="🥟 Crispy Fafda & Hot Sweet Jalebis">
+                <div class="dish-top">
+                  <span class="dish-emoji">🥟</span>
+                  <span class="dish-name">Jalebi & Fafda</span>
+                </div>
+                <p class="dish-desc">The undisputed Navratri midnight champion with papaya sambharo & fried green chillies.</p>
+                <div class="dish-price">Midnight Champion ★</div>
+              </button>
+
+              <button class="menu-dish-card" data-group="duration" data-value="☕ Kulhad Masala Chai & Bun Maska">
+                <div class="dish-top">
+                  <span class="dish-emoji">☕</span>
+                  <span class="dish-name">Kulhad Chai & Bun Maska</span>
+                </div>
+                <p class="dish-desc">Steaming spiced tea in earthen cups to soothe tired feet in the cool night breeze.</p>
+                <div class="dish-price">Pure Comfort ★</div>
+              </button>
+
+              <button class="menu-dish-card" data-group="duration" data-value="🍨 Midnight Matka Kulfi & Falooda">
+                <div class="dish-top">
+                  <span class="dish-emoji">🍨</span>
+                  <span class="dish-name">Matka Kulfi & Falooda</span>
+                </div>
+                <p class="dish-desc">Chilled, creamy saffron-pistachio kulfi to cool down after intense dance rounds.</p>
+                <div class="dish-price">Sweet Indulgence ★</div>
+              </button>
+
+              <button class="menu-dish-card" data-group="duration" data-value="🌮 Street Food Feast & Cold Drinks">
+                <div class="dish-top">
+                  <span class="dish-emoji">🌮</span>
+                  <span class="dish-name">Street Food Feast</span>
+                </div>
+                <p class="dish-desc">Butter Pav Bhaji, Sev Puri, and chilled sodas at buzzing midnight street stalls.</p>
+                <div class="dish-price">Full Feast ★</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu Bottom Bar -->
+          <div class="menu-bottom-action">
+            <div class="menu-ornament bottom">❧ 🪔 ☙</div>
+            <button id="generateTicketBtn" class="btn btn-gold glow-effect" type="button">
+              <span>Confirm Garba Night & Issue VIP Pass 🎟️</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- GOLDEN VIP TICKET DISPLAY (Inside the popup!) -->
+        <div id="ticketContainer" class="ticket-wrapper hidden">
+          <div class="vip-ticket" id="dateVipTicket">
+            <div class="ticket-cutout cutout-left"></div>
+            <div class="ticket-cutout cutout-right"></div>
+            
+            <div class="ticket-header">
+              <div class="ticket-logo">✨ OFFICIAL GARBA NIGHT VIP PASS ✨</div>
+              <div class="ticket-pass-id">PASS #GARBA-<span data-bind="dateNumber">2026</span></div>
+            </div>
+
+            <div class="ticket-body">
+              <h3 class="ticket-lovers">
+                <span data-bind="yourName">Harsh</span> &times; <span data-bind="herName">Anshi</span>
+              </h3>
+
+              <div class="ticket-details-grid">
+                <div class="ticket-row">
+                  <span class="t-label">GARBA VENUE:</span>
+                  <span class="t-val" id="t-restro-val">Global Garba Festival 2026 (Purana Qila)</span>
+                </div>
+                <div class="ticket-row">
+                  <span class="t-label">ATTIRE STYLE:</span>
+                  <span class="t-val" id="t-timing-val">Patola Print Fusion Coordinates</span>
+                </div>
+                <div class="ticket-row">
+                  <span class="t-label">DANCE ANTHEM:</span>
+                  <span class="t-val" id="t-commute-val">"Chogada" (Loveyatri)</span>
+                </div>
+                <div class="ticket-row">
+                  <span class="t-label">MIDNIGHT CRAVING:</span>
+                  <span class="t-val" id="t-duration-val">Crispy Fafda & Hot Sweet Jalebis</span>
+                </div>
+                <div class="ticket-row">
+                  <span class="t-label">STATUS:</span>
+                  <span class="t-val highlight-confirmed">✓ 100% OFFICIALLY CONFIRMED GARBA PARTNER</span>
+                </div>
+              </div>
+
+              <div class="ticket-barcode-wrap">
+                <div class="barcode-lines"></div>
+                <small>NON-REFUNDABLE &bull; UNLIMITED TWIRLS GUARANTEED FOR ANSHI</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket-actions">
+            <button id="printTicketBtn" class="btn btn-gold" type="button">
+              <span>Save VIP Pass Image 📥</span>
+            </button>
+            <button id="shareWhatsappBtn" class="btn btn-glass" type="button">
+              <span>Share Pass Image on WhatsApp 💬</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL FOR MEMORY PHOTOS -->
+  <div id="photoLightbox" class="lightbox-modal hidden" aria-modal="true" role="dialog">
+    <div class="lightbox-backdrop" id="lightboxClose"></div>
+    <div class="lightbox-card">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="Memory expanded photo">
+      </div>
+      <div class="lightbox-caption" id="lightboxCaption">
+        <p class="handwriting"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="romantic-footer">
+    <div class="footer-content">
+      <p class="footer-love">Built with ❤️ exclusively for <span data-bind="herName">Anshi</span></p>
+      <p class="footer-sub">Inspired by spinning lehengas, rhythmic dholak beats & late night jalebi-fafda.</p>
+    </div>
+  </footer>
+
+  <script src="html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
