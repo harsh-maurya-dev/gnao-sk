@@ -7,7 +7,7 @@
 // ✏️ Personalize default names and data here:
 const dateConfig = {
   yourName: "Harsh",
-  herName: "Anshi",
+  herName: "Shehnaz",
   heroTitle: "Garba Under The Starlit Sky",
   dateNumber: "2026",
   music: "assets/music.mp3",
@@ -46,8 +46,8 @@ const selectedDate = {
 (() => {
   'use strict';
 
-  // Ensure her name is firmly set to Anshi
-  dateConfig.herName = "Anshi";
+  // Ensure her name is firmly set to Shehnaz
+  dateConfig.herName = "Shehnaz";
   dateConfig.music = "assets/music.mp3";
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -857,7 +857,7 @@ const selectedDate = {
           downloadLink.click();
           downloadLink.remove();
 
-          showToast('VIP Pass image downloaded! Opening WhatsApp to share with Anshi ❤️');
+          showToast('VIP Pass image downloaded! Opening WhatsApp to share with Shehnaz ❤️');
 
           // Open WhatsApp with romantic message
           setTimeout(() => {
@@ -1023,7 +1023,7 @@ const selectedDate = {
     ctx.fillStyle = '#cbd5e1';
     ctx.font = '13px monospace';
     ctx.textAlign = 'center';
-    ctx.fillText('NON-REFUNDABLE • UNLIMITED TWIRLS GUARANTEED FOR ANSHI', 500, 656);
+    ctx.fillText('NON-REFUNDABLE • UNLIMITED TWIRLS GUARANTEED FOR SHEHNAZ', 500, 656);
 
     return await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
   }
